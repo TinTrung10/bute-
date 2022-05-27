@@ -1,0 +1,1403 @@
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* fonts */
+:root{
+    --overskrift: 'Raleway';
+    --broedtekst: 'poppins';
+}
+
+/* Basic CSS reset */
+
+*, :after, :before {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+/* You start your css below */
+
+.wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* navigation */
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 24px;
+  gap: 20px;
+}
+
+.topnav #myLinks {
+  display: none;
+  position: absolute;
+  text-align: right;
+  top: 70px;
+  right:0;
+  padding: 0px 40px;
+  padding-top:30px;
+  padding-bottom: 40px;
+  font-family: var(--broedtekst);
+  font-size: 2em;
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  text-transform: uppercase;
+  }
+
+.nav-item {
+  margin: 16px 0;
+}
+
+.logo {
+  width: 25%;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+.topnav a.icon {
+  display: block;
+}
+
+.kurv img {
+  width: 39px;
+}
+
+.dropdown-content a{
+  font-size: 1rem;
+  display: block;
+}
+
+  /* Icon 3 burgermenu */
+
+  #nav-icon3{
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin: auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+  }
+  
+  #nav-icon3 span{
+    display: block;
+    position: absolute;
+    height:2px;
+    width: 100%;
+    background: black;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+  }
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+}
+
+#nav-icon3 span:nth-child(2),#nav-icon3 span:nth-child(3) {
+  top: 10px;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 20px;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.kollektion_overskrift{
+    font-family: var(--overskrift);
+    text-align: center;
+    display: none;
+}
+
+
+.model_overskrift{
+  font-family: var(--overskrift);
+  text-align: center;
+  padding: 14px 16px;
+}
+
+/* tilføj til kurv icon */
+h5{
+  width: 3%;
+    position: relative;
+    cursor: pointer;
+}
+h5:before{
+  content: attr(data-count);
+    color: white;
+    position: absolute;
+    right: -45px;
+    font-size: 11px;
+    text-align: center;
+    top: 0;
+    width: 17px;
+    height: 17px;
+    background: #284734;
+    border-radius: 50%;
+    display: none;
+}
+h5.zero:before{
+  display: block;
+}
+
+/* indkøbskurv */
+.cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  padding: 20px;
+  background-color: white;
+  box-shadow: -2px 0 4px hsl(0, 4% 15% / 10%);
+  z-index: 99;
+  transition: 0.3s;
+  overflow: scroll;
+}
+
+.cart.active{
+  right: 0;
+}
+
+.cart-title{
+  font-family: var(--overskrift);
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+.cart-box{
+  display: grid;
+  grid-template-columns: 32% 50% 18%;
+  text-align: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cart-img{
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.detail-box {
+  font-family: var(--broedtekst);
+  display: grid;
+  row-gap: 0.5rem;
+  text-align: left;
+}
+
+.cart-product-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.cart-price {
+  font-weight: bold;
+}
+
+.cart-quantity {
+  text-align: left;
+  font-size: 1rem;
+}
+
+.cart-remove {
+  font-size: 24px;
+  color: black;
+  cursor: pointer;
+  text-align: left;
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+  border-top: 1px solid black;
+}
+
+.total-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.total-price{
+  margin-left: 0.5rem;
+}
+
+.btn-buy {
+  display: flex;
+  margin: 1.5rem auto 0 auto;
+  padding: 12px 20px;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.btn-buy:hover{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#close-cart{
+  position: absolute;
+  top: 1rem;
+  right: 0.8rem;
+  cursor: pointer;
+}
+
+.product-img{
+  display: none;
+}
+
+/* tilbage pil */
+.arrow {
+  font-size: 2em;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Flex og redigering af sko divs*/
+
+.sko {
+    width: 100%;
+  }
+  
+  .sko_container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+  }
+  
+  
+  .sko_container > div {
+    flex: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .sko_style1, .sko_style2, .sko_style3, .sko_style4{
+    width: 100%;
+  }
+  
+  .sko_style1:hover{
+    background-color: #0b3543;
+  }
+  
+  .sko_style2:hover{
+    background-color: #284734;
+  }
+  
+  .sko_style3:hover{
+    background-color: #ccbfac;
+  }
+  
+  .sko_style4:hover{
+    background-color: #6f2241;
+  }
+  /* Slut sko div*/
+
+  /*Produkts informations boks*/
+
+  .produkts_info{
+    padding-left: 7%;
+    padding-right: 7%;
+    background-color: #0b3543;
+  }
+
+  .produkts_info p{
+    font-family: var(--broedtekst);
+    line-height: 1.7em;
+    color:white;
+    padding-top: 7%;
+  }
+
+  .mobil_video{
+    width:100%;
+    height: auto;
+  }
+
+/*Display none på laptop elementer*/
+  .laptop_logo_info{
+    display: none;
+  }
+
+  .laptop_video{
+    display: none;
+  }
+
+  .laptop_ekstra_info{
+    display: none;
+  }
+
+  .laptop_produkts_info{
+    display: none;
+  }
+
+  /* SLUT med fjernelse af laptop elementer*/
+
+  .tekst_logo, img{
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10%;
+  }
+
+
+/* carousel */
+
+#karrusel {
+  padding: 20px;
+}
+
+.carousel_container img {
+  vertical-align: center;
+}
+
+.shop-content .sko_title {
+  font-family: var(--overskrift);
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem;
+}
+
+.sko_pris, .sko_guide, .etiket {
+  padding: 0.5rem;
+  font-family: var(--broedtekst);
+}
+
+.sko_pris {
+  font-size: 1.5rem;
+}
+
+.sko_guide {
+  cursor: pointer;
+  font-weight: 400;
+  color: rgb(105, 102, 102);
+  border-bottom: 1px solid black;
+}
+
+#stoerrelser {
+  width: 4rem;
+  padding: 5px;
+  border-radius: 12px;
+  border:1px solid black;
+  text-align: center;
+}
+
+/* slideshow auto */
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlide {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: 50px 0 50px 0;
+}
+
+.mySlide img {
+width: 100%;
+height: auto;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  display: none;
+}
+
+.aktive {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.carousel_container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: #284734;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: black;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.activ,
+.demo:hover {
+  opacity: 1;
+}
+
+/* størrelsesguide */
+.shop-content {
+  text-align: center;
+  padding: 5%;
+  justify-content: center;
+}
+
+/* læg i kurv */
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 5px 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 1);
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 1px;
+  font-family: var(--broedtekst);
+  font-size: large;
+}
+
+button:hover{
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+/*Monogramet i produktbeskrivelsen*/
+.produkt_mono{
+  width: 100%;
+  height: auto;
+  padding: 50px;
+}
+
+/*Sko modeller*/
+
+  .sko_modeller{
+    margin:0%
+  }
+
+  .sko_modeller, a{
+    width: auto;
+  }
+
+  .sko_modeller, img{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0%;
+  }
+
+  /*Footer*/
+
+.footer_tekst p{
+  text-align: center;
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: var(--broedtekst);
+  line-height: 1.5em;
+}
+
+.footer .footer_kollektion img{
+  width: 60%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.laptop_footer_sko{
+  display: none;
+}
+
+.footer .monogram, img{
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.laptop_kontakt_information_img{
+  display: none;
+}
+
+.kontakt_information{
+font-family: var(--overskrift);
+text-align: left;
+margin-left: 20%;
+}
+
+.kontakt_information h1, h3{
+  line-height: 1.5em;
+}
+
+.kontakt_information h1{
+  font-size: 2em;
+}
+
+
+.footer, .some_container img{
+  max-width: 100%;
+}
+
+.some_container{
+ padding-right:100px;
+}
+
+.kontakt_information .some_container{
+  display: flex;
+  margin-left: 0%;
+  float: left;
+  text-align: left;
+
+}
+
+.ikon{
+  flex: 30%;
+  margin-right: 5px;
+}
+
+/*Slut footer*/
+
+
+/* tablet */
+@media only screen and (min-width: 600px) {
+  
+  /* navigation */
+  header {
+    text-align: center;
+    padding: 2%;
+  }
+
+  .kurv {
+    order:1;
+  }
+
+  .logo{
+    order: 2;
+    margin: 0;
+    width: 13%;
+  }
+
+  .icon {
+    order:3;
+  }
+
+  .topnav #myLinks {
+    display: none;
+    position: absolute;
+    text-align: right;
+    top: 0;
+    right:0;
+    padding: 130px 50px;
+    font-family: var(--broedtekst);
+    font-size: 2.5rem;
+  }
+
+
+/*Sko flex*/  
+  .sko_container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: 13%;
+    margin-right: 13%;
+  }
+  
+  .macerata img, .babila img, .condotti img, .spiga img{
+    width: 55%;
+    height: auto;
+  }
+
+/*Monogramet i produktbeskrivelsen*/
+.mono_container img{
+  width: 50%;
+  margin-left: 0%;
+}
+
+/*Produkts information boks*/
+
+.produkts_info{
+  padding-left: 12%;
+  padding-right: 12%;
+  background-color: #0b3543;
+}
+
+.produkts_info p{
+  font-family: var(--broedtekst);
+  line-height: 1.7em;
+  color:white;
+  padding-top: 7%;
+}
+
+/*Informations boks*/
+/*Flex af tekst og logo på laptop*/
+.produkts_info1{
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+} 
+
+.produkts_info_tekst{
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  font-size: 0.8em;
+}
+
+.laptop_logo_info, img{
+  display: block;
+  width:20%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto
+}
+
+/*Fjerner mobil video*/
+.mobil_video{
+  display: none;
+}
+/*Slut*/
+
+.laptop_video{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*Billede og tekst flex infoboks tablet og webformat*/
+.laptop_produkts_info{
+  display: block;
+
+  width: 100%;
+  padding-top: 3%;
+}
+
+.laptop_produkts_billede{
+  display: block;
+  width: 80%;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.laptop_produkts_tekst{
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.laptop_produkts_tekst{
+  font-family: var(--broedtekst);
+  color: white;
+}
+
+.laptop_produkts_tekst h1{
+  font-size: 1.5em;
+  line-height: 2em;
+}
+
+.laptop_produkts_tekst p{
+  font-size: 0.8em;
+  padding-top: 5%;
+  line-height: 2em;
+}
+
+
+.tekst_logo, img{
+  width: 20%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10%;
+}
+
+
+/*Sko modeller*/
+
+.sko_modeller{
+  margin:0%
+}
+
+.sko_modeller, a{
+  width: auto;
+}
+
+.sko_modeller, img{
+  width: 55%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0%;
+}
+
+/*Footer*/
+
+  .footer_tekst p{
+    font-size: 1.1em;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  .footer .footer_kollektion img{
+    width: 50%;
+  }
+
+  .monogram, img{
+    width:100%;
+  }
+  
+  .kontakt_information p{
+    line-height: 1.8em;
+  }
+  
+  .some_container{
+    display: flex;
+    text-align: left;
+    width: 40%;
+    padding-right: 0px;
+  }
+  
+  
+}
+
+/* laptop */
+@media only screen and (min-width: 769px) {
+
+    /* navigation*/
+    header {
+      margin: 0;
+      padding: 10px 0px;
+    }
+  
+    .topnav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+    }
+
+    .logo {
+      margin:0px auto 0 50px;
+      order:1;
+      width: 9%;
+    }
+  
+    .kurv {
+      order:3;
+      margin-right: 50px;
+      cursor: pointer;
+    }
+  
+    .icon {
+      display: none;
+    }
+  
+    .topnav #myLinks{
+      display: inline-block;
+      order: 2;
+      padding: 0px 50px 0px 50px;
+      position: relative;
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 500;
+      background: none;
+      top:0;
+    }
+  
+    .topnav .nav-item{
+      display: inline-block;
+      padding: 0px 16px;
+    }
+  
+    .topnav a.icon {
+      display: none;
+    }
+  
+    /* hovereffect */
+    .topnav #myLinks a {
+      display: inline-block;
+      position: relative;
+      color: black;
+    }
+    
+    .topnav #myLinks a:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: 
+    black;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+    }
+    
+    .topnav #myLinks a:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
+    /* dropdown i nav*/
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      text-align: left;
+      background-color: #284734;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 1rem;
+    }
+
+    #myLinks .nav-item .a-link {
+      color: white;
+    }
+  
+    .nav-item:hover .dropdown-content {display: block;}
+  
+    .nav-item {
+      margin: 16px 0;
+        position: relative;
+        display: inline-block;
+      
+    }
+  
+  /* Add a color on mouse-over */
+  ul#myLinks li .nav-link:hover {
+    color: #284734;
+  }
+
+  /* tilbage pil */
+  .arrow {
+    font-size: 2.5rem;
+    margin-left: 60px;
+    cursor: pointer;
+  }
+
+    /* overskrifter */
+    .kollektion_overskrift{
+      font-family: var(--overskrift);
+      text-align: center;
+      display: none;
+  }
+  
+  .model_overskrift{
+    font-family: var(--overskrift);
+    text-align: center;
+    padding: 50px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  padding: 70px 150px 100px 150px;
+  margin: 0;
+}
+
+    /*Sko divs flex*/
+
+    .sko_container{
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    
+    .sko_container > div {
+      flex: 25%;
+      margin-bottom: 10px;
+    }
+    
+    
+    .sko_style1_1:hover{
+      background-color: #0b3543;
+      background-image: url("../images/condotti-hvid.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    .sko_style2_1:hover{
+      background-color: #284734;
+      background-image: url("../images/spiga-hvid.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    .sko_style3_1:hover{
+      background-color: #ccbfac;
+      background-image: url("../images/macerata-hvid.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    .sko_style4_1:hover{
+      background-color: #6f2241;
+      background-image: url("../images/baliba-hvid.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    
+    .sko_container {
+      padding-bottom: 50px;
+    }
+    
+    .macerata img, .babila img, .condotti img, .spiga img{
+      width: 40%;
+      height: auto;
+      margin-top:0px;
+      margin-bottom: 0px;
+    }
+
+    /*Sko modeller flex laptop*/
+
+    .sko_modeller{
+      width: 100%;
+      display: flex;
+    }
+
+    .sko_modeller img{
+      width: 80%;
+      height: auto;
+      margin-top: 20%;
+    }
+
+    /*Sko modeller flex laptop slut*/
+    
+    .footer_tekst p{
+      font-size: 0.9em;
+      line-height: 1.9em;
+      margin-left: 30%;
+      margin-right: 30%;
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+
+    /* karrusel */
+
+    #karrusel {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center; 
+      
+    }
+
+    .carousel_container {
+      flex: 60%;
+    }
+
+    .shop-content{
+      flex: 40%;
+    }
+
+    .shop-content .sko_title {
+      font-family: var(--overskrift);
+      font-size: 3rem;
+      font-weight: 600;
+      padding: 0.5rem;
+    }
+
+    #stoerrelser {
+      width: 4rem;
+      padding: 5px;
+      border-radius: 12px;
+      border:1px solid black;
+      text-align: center;
+  }
+
+    /* Footer flex af sko og billede*/
+
+.laptop_footer_flex{
+  width: 100%;
+  display: flex;
+  height: 90vh;
+}
+
+.footer .footer_kollektion{
+  width: 40%;
+  margin-left: 5%;
+}
+
+.footer .footer_kollektion img{
+  width: 80%;
+  margin-right:0%;
+  margin-left:0%;
+}
+
+.laptop_footer_sko{
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.laptop_footer_sko > div {
+  flex: 50%;
+  margin-bottom: 10px;
+}
+
+.sko1_1{
+  width:100%;
+}
+
+.sko_style1_1, .sko_style2_1, .sko_style3_1, .sko_style4_1{
+  width: 100%;
+}
+
+/* Footer flex af sko og billede SLUT*/
+
+/*Informations boks*/
+/*Flex af tekst og logo på laptop*/
+.produkts_info{
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.produkts_info1{
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 5%;
+} 
+
+.produkts_info_tekst{
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  font-size: 0.8em;
+}
+
+.laptop_logo_info, img{
+  display: block;
+  width:12%;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto
+}
+
+/*Redigering af video laptop*/
+.laptop_video{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top:0%;
+}
+
+/*Billede og tekst flex infoboks*/
+.laptop_produkts_info{
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-top: 3%;
+}
+
+.laptop_produkts_billede{
+  display: block;
+  width: 50%;
+  height: auto;
+}
+
+.laptop_produkts_tekst{
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  height: auto;
+  padding-left: 6%;
+}
+
+.laptop_produkts_tekst{
+  font-family: var(--broedtekst);
+  color: white;
+}
+
+.laptop_produkts_tekst h1{
+  font-size: 2.2em;
+  line-height: 1.2em;
+}
+
+.laptop_produkts_tekst p{
+  font-size: 0.8em;
+  padding-top: 0px;
+  line-height: 2em;
+}
+
+/*Monogramet i produktbeskrivelsen*/
+.mono_container img{
+  padding: 0px 90px 90px 90px;
+  width: 35%;
+  height: auto;
+}
+
+/*Skub Buté logo til højre i produktsinfo boks*/
+.laptop_tekst_logo .tekst_logo{
+  margin-left: 72%;
+  margin-right: auto;
+  width: 12%;
+  padding-top: 2%;
+}
+
+.footer .monogram, img{
+  width: 100%;
+  height: auto;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/* laptop kontakt information med billede flex*/
+
+.kontakt_information{
+  margin-left: 10%;
+}
+
+.laptop_kontakt_information{
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.laptop_kontakt_information_img{
+  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  width: 45%;
+  margin-left: 10%;
+  margin-bottom: 2%;
+}
+
+.footer .kontakt_information{
+  width: 30%;
+}
+
+.some_container{
+  display: flex;
+  flex-wrap: wrap;
+  width: 40%;
+  text-align: left;
+}
+
+/* indkøbskurv */
+.cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 360px;
+  min-height: 100vh;
+  height: 100%;
+  padding: 20px;
+  box-shadow: -2px 0 4px hsl(0, 4% 15% / 10%);
+  z-index: 99;
+  transition: 0.3s;
+  overflow: scroll;
+}
+
+}
+
+/* PC/ større skærme */
+@media only screen and (min-width: 1367px) {
+
+  /* navigation*/
+  .container {
+    max-width: 1920px;
+    margin: auto;
+    height: 100%;
+  }
+
+}

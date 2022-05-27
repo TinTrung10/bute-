@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Buté er en dansk virksomhed der producerer sko der er skandanavisk designet og er af italiansk kvalitet. Buté er lig med komfort, kvalitet og elegance.">
+    <meta name="keywords" content="Buté, sko, kvalitet, elegant, komfortable, italiansk, scandanavisk, salg, value for money, business, design ">
+    <!-- boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/butesider.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon.png">
+    <title>Buté | Kontakt</title>
+</head>
+<style>
+.kontakt_web{
+    display: none;
+}
+
+
+    /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 60%;  
+  display: block;
+  margin-left: 5%;
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box; 
+  margin-top: 6px; 
+  margin-bottom: 16px; 
+  resize: vertical 
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #284734;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 5%;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+@media only screen and (min-width: 600px){
+    input[type=text], select, textarea{
+        width: 50%;
+        margin-left: 10%;
+    }
+
+    input[type=submit]{
+        margin-left: 10%;
+    }
+    
+    .kontaktside_img{
+        width: 80%;
+        display: block;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+/* laptop */
+@media only screen and (min-width: 769px){
+    .kontakt_mobil{
+        display: none;
+    }
+
+    .kontakt_web{
+        display: block;
+        display: flex;
+        width: 100%;
+        margin-top:2%;
+    }
+
+    .kontaktside_flex1{
+        width: 50%;
+    }
+
+    .kontaktside_flex2{
+        width: 50%;
+    }
+
+    .kontaktside_img{
+        width: 55%;
+        display: block;
+        margin-top: 0%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    input[type=text], select, textarea{
+        width: 50%;
+        margin-left: 2%;
+    }
+
+    input[type=submit]{
+        margin-left: 2%;
+    }
+
+    /*Kontaktside tekst*/
+    .kontakt_overskrift{
+        margin-left: 2%;
+}
+
+    .kontakt_tekst{
+        margin-left: 2%;
+        margin-right:30%;
+  
+}
+    
+}
+
+</style>
+
+
+<body class="wrapper">
+
+    <header>
+
+        <!-- Top Navigation Menu -->
+        <nav class="topnav" id="myTopnav">
+          <a href="index.html" class="logo"><img src="images/bute-typografisk-logo-sort.png" alt="logo"></a>
+    
+          <div class="kurv">
+              <div id="kurv">
+                <img src="images/shoppingbag.png" alt="indkoebskurv" id="cart-icon">
+              </div>
+          </div>
+    
+          <ul id="myLinks">
+            <li class="nav-item"><a href="kollektion.html" class="nav-link">Kollektion</a><div class="dropdown-content">
+              <a class="a-link" href="kollektion.html">Alle sko</a>
+              <a class="a-link" href="kollektion_damer.html">Dame Sko</a>
+              <a class="a-link" href="kollektion_herre.html">Herre sko</a>
+            </div></li>
+    
+            <li class="nav-item"><a href="ombute.html" class="nav-link">Om Buté</a><div class="dropdown-content">
+              <a class="a-link" href="ombute.html">BUTÉ</a>
+              <a class="a-link" href="producent.html">VORES PRODUCENT</a>
+              <a class="a-link" href="materialer.html">MATERIALER</a>
+            </div></li>
+    
+            <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a><div class="dropdown-content">
+              <a class="a-link" href="kontakt.html">Kontakt os</a>
+              <a class="a-link" href="reklamation.html">Reklamation</a>
+            </div></li>
+          </ul>
+    
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <div id="nav-icon3">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </a>
+    
+          <!-- Cart -->
+        <div class="cart">
+          <h2 class="cart-title">Din indkøbskurv</h2>
+          <!-- Content -->
+          <div class="cart-content">
+    
+          </div>
+          <!-- Total -->
+          <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">0 DKK</div>
+          </div>
+          <!-- Buy Button -->
+          <button type="button" class="btn-buy">Køb nu</button>
+          <!-- Cart Close -->
+          <i class='bx bx-x' id="close-cart"></i>
+        </div>
+        
+        </nav> 
+      </header>
+
+    <!--Mobile og tablet kontakt-->
+    <div class="kontakt_mobil">
+        <div class="model_overskrift"><h1>KONTAKT</h1></div>
+        <div class="kontakt_tekst"><p>Har du spørgsmål vedrørende vores handelsbetingelser, betalingsservice, størrelser, fit eller andet, så send os en besked - vi besvarer alle mails inden for 24 timer på hverdage</p></div>
+        <div>
+            <form action="">
+
+                
+                <input type="text" id="fname" name="firstname" placeholder="Navn">
+                <input type="text" id="lname" name="lastname" placeholder="Mailadresse*">
+                <input type="text" id="lname" name="lastname" placeholder="Telefonnummer">
+                <textarea id="subject" name="subject" placeholder="Kommentar" style="height:200px"></textarea>
+            
+                <input type="submit" value="Send">
+              </form>
+        </div>
+        <div class="kontaktside_img"> <img src="images/spiga/BUTE_13_12_21_1243.jpg" alt="spiga sko"></div>
+    </div>
+
+
+        <!--Web kontakt-->
+    <div class="kontakt_web">
+        <div class="kontaktside_flex1">
+            <div class="kontaktside_img"> <img src="images/skokasser.jpg" alt="spiga sko"></div>
+        </div> 
+
+        <div class="kontaktside_flex2">
+            <div class="kontakt_overskrift"><h1>Kontakt</h1></div>
+            <div class="kontakt_tekst"><p>Har du spørgsmål vedrørende vores handelsbetingelser, betalingsservice, størrelser, fit eller andet, så send os en besked - vi besvarer alle mails inden for 24 timer på hverdage</p></div>
+            <div>
+                <form action="">
+    
+                    
+                    <input type="text" id="fname" name="firstname" placeholder="Navn">
+                    <input type="text" id="lname" name="lastname" placeholder="Mailadresse*">
+                    <input type="text" id="lname" name="lastname" placeholder="Telefonnummer">
+                    <textarea id="subject" name="subject" placeholder="Kommentar" style="height:200px"></textarea>
+                
+                    <input type="submit" value="Send">
+                  </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+
+            <section class="footer">
+              <div class="footer_tekst">
+               <p> Hos Buté får du sko med tradition i Italiensk håndværk og materialer udført i et moderne design med skandinaviske aner. Du behøver ikke længere at vælge mellem komfort og design. Få det hele. Be Buté. </p>
+              </div>
+          
+          <div class="laptop_footer_flex">
+              <div class="footer_kollektion">
+                <a href="kollektion.html"> <img src="images/se-kollektion.png" alt="kollektion billede"> </a>
+              </div>
+          
+              <div class="laptop_footer_sko">
+                <div class="sko1"> <a href="condotti.html"> <img class="sko_style1_1" src="images/condotti-sort.png" alt="condotti sko"> </a></div>
+                <div class="sko1"> <a href="spiga.html"> <img class="sko_style2_1" src="images/spiga-sort.png" alt="spiga sko"></a> </div>
+                <div class="sko1"> <a href="macerata.html"> <img class="sko_style3_1" src="images/macerata-sort.png" alt="macerata sko"></a> </div>
+                <div class="sko1"> <a href="babila.html"> <img class="sko_style4_1" src="images/baliba-sort.png" alt="babila sko"> </a></div>
+              </div>
+          
+          </div>
+          
+              <div class="monogram">
+                <img src="images/monogram.png" alt="monogram">
+              </div>
+          
+            <div class="laptop_kontakt_information">
+              <div class="kontakt_information">
+                <h1>KONTAKT</h1>
+                <h3><a href="kontakt.html">KONTAKTSIDE</a> <br> ADRESSE </h3>
+                <p>Fabriksvej 11B <br> 8260 Viby <br> DANMARK</p>
+                <h3>RETUNERINGER <br> FAQ </h3>
+                <div class="some_container">
+                  <div class="ikon"> <a href="https://www.instagram.com/officialbute/?hl=da"> <img src="images/instagram.png" alt="instagram icon"> </div> </a>
+                  <div class="ikon"> <a href="https://www.facebook.com/officialbute"> <img src="images/facebook.png" alt="facebook icon"> </div> </a>
+                  <div class="ikon"> <a href="https://www.linkedin.com/company/but%C3%A9/about/"> <img src="images/linkedin.png" alt="linkedin icon"> </div> </a>
+               </div>
+              </div>
+          
+              
+          
+              <div class="laptop_kontakt_information_img"> <img src="images/footer-img.png" alt="billede af model med sko"> </div>
+            </div>
+          
+            </section>
+          </footer>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+          <script src="js/burger.js"></script>
+          <script src="js/function.js"></script>
+    
+</body>
+
+
+</html>
