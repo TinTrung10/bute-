@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Buté er en dansk virksomhed der producerer sko der er skandanavisk designet og er af italiansk kvalitet. Buté er lig med komfort, kvalitet og elegance.">
-    <meta name="keywords" content="Buté, sko, kvalitet, elegant, komfortable, italiansk, scandanavisk, salg, value for money, business, design ">
-    <!-- boxicons -->
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/kollektion.css">
-    <link rel="icon" type="image/x-icon" href="images/favicon.png">
-    <title>Buté | Dame Kollektion</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Buté er en dansk virksomhed der producerer sko der er skandanavisk designet og er af italiansk kvalitet. Buté er lig med komfort, kvalitet og elegance.">
+  <meta name="keywords"
+    content="Buté, sko, kvalitet, elegant, komfortable, italiansk, scandanavisk, salg, value for money, business, design ">
+  <!-- boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="css/kollektion.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+  <title>Buté | Dame Kollektion</title>
 </head>
 <script src="js/script.js"></script>
 
@@ -24,28 +27,34 @@
       <a href="index.html" class="logo"><img src="images/bute-typografisk-logo-sort.png" alt="logo"></a>
 
       <div class="kurv">
-          <div id="kurv">
-            <img src="images/shoppingbag.png" alt="indkoebskurv" id="cart-icon">
-          </div>
+        <div id="kurv">
+          <img src="images/shoppingbag.png" alt="indkoebskurv" id="cart-icon">
+        </div>
       </div>
 
       <ul id="myLinks">
-        <li class="nav-item"><a href="kollektion.html" class="nav-link">Kollektion</a><div class="dropdown-content">
-          <a class="a-link" href="kollektion.html">Alle sko</a>
-          <a class="a-link" href="kollektion_damer.html">Dame Sko</a>
-          <a class="a-link" href="kollektion_herre.html">Herre sko</a>
-        </div></li>
+        <li class="nav-item"><a href="kollektion.html" class="nav-link">Kollektion</a>
+          <div class="dropdown-content">
+            <a class="a-link" href="kollektion.html">Alle sko</a>
+            <a class="a-link" href="kollektion_damer.html">Dame Sko</a>
+            <a class="a-link" href="kollektion_herre.html">Herre sko</a>
+          </div>
+        </li>
 
-        <li class="nav-item"><a href="ombute.html" class="nav-link">Om Buté</a><div class="dropdown-content">
-          <a class="a-link" href="ombute.html">BUTÉ</a>
-          <a class="a-link" href="producent.html">VORES PRODUCENT</a>
-          <a class="a-link" href="materialer.html">MATERIALER</a>
-        </div></li>
+        <li class="nav-item"><a href="ombute.html" class="nav-link">Om Buté</a>
+          <div class="dropdown-content">
+            <a class="a-link" href="ombute.html">BUTÉ</a>
+            <a class="a-link" href="producent.html">VORES PRODUCENT</a>
+            <a class="a-link" href="materialer.html">MATERIALER</a>
+          </div>
+        </li>
 
-        <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a><div class="dropdown-content">
-          <a class="a-link" href="kontakt.html">Kontakt os</a>
-          <a class="a-link" href="reklamation.html">Reklamation</a>
-        </div></li>
+        <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a>
+          <div class="dropdown-content">
+            <a class="a-link" href="kontakt.html">Kontakt os</a>
+            <a class="a-link" href="reklamation.html">Reklamation</a>
+          </div>
+        </li>
       </ul>
 
       <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -58,89 +67,110 @@
       </a>
 
       <!-- Cart -->
-    <div class="cart">
-      <h2 class="cart-title">Din indkøbskurv</h2>
-      <!-- Content -->
-      <div class="cart-content">
+      <div class="cart">
+        <h2 class="cart-title">Din indkøbskurv</h2>
+        <!-- Content -->
+        <div class="cart-content">
 
+        </div>
+        <!-- Total -->
+        <div class="total">
+          <div class="total-title">Total</div>
+          <div class="total-price">0 DKK</div>
+        </div>
+        <!-- Buy Button -->
+        <button type="button" class="btn-buy">Køb nu</button>
+        <!-- Cart Close -->
+        <i class='bx bx-x' id="close-cart"></i>
       </div>
-      <!-- Total -->
-      <div class="total">
-        <div class="total-title">Total</div>
-        <div class="total-price">0 DKK</div>
-      </div>
-      <!-- Buy Button -->
-      <button type="button" class="btn-buy">Køb nu</button>
-      <!-- Cart Close -->
-      <i class='bx bx-x' id="close-cart"></i>
-    </div>
-    
-    </nav> 
+
+    </nav>
   </header>
 
-    <div class="model_overskrift">
-        <h1>Dame kollektion</h1>
+  <div class="model_overskrift">
+    <h1>Dame kollektion</h1>
+  </div>
+
+  <!--Sko kollektion flex-->
+  <section class="sko_container">
+    <div class="sko"> <a href="spiga.html"> <img class="sko_style2" src="images/spiga-ikon.png"
+          alt="spiga kollektion"></a>
+      <h2>Spiga</h2>
+      <p>1850,00 DK</p>
     </div>
+    <div class="sko"> <a href="babila.html"> <img class="sko_style4" src="images/baliba-ikon.png"
+          alt="babila kollektion"> </a>
+      <h2>Babila</h2>
+      <p>1495,00 DK</p>
+    </div>
+    <div class="sko"> <a href="macerata.html"> <img class="sko_style3" src="images/macerata-ikon.png"
+          alt="macerata kollektion"></a>
+      <h2>Macerata</h2>
+      <p>1850,00 DK</p>
+    </div>
+    <div class="sko"> </div>
+  </section>
 
-        <!--Sko kollektion flex-->
-        <section class="sko_container">
-          <div class="sko"> <a href="spiga.html"> <img class="sko_style2" src="images/spiga-ikon.png" alt="spiga kollektion"></a> <h2>Spiga</h2> <p>1850,00 DK</p> </div>
-          <div class="sko"> <a href="babila.html"> <img class="sko_style4" src="images/baliba-ikon.png" alt="babila kollektion"> </a> <h2>Babila</h2> <p>1495,00 DK</p></div>  
-          <div class="sko"> <a href="macerata.html"> <img class="sko_style3" src="images/macerata-ikon.png" alt="macerata kollektion"></a> <h2>Macerata</h2> <p>1850,00 DK</p> </div>
-          <div class="sko"> </div>
-          </section>
 
-    
-          <footer>
-
-            <section class="footer">
-              <div class="footer_tekst">
-               <p> Hos Buté får du sko med tradition i Italiensk håndværk og materialer udført i et moderne design med skandinaviske aner. Du behøver ikke længere at vælge mellem komfort og design. Få det hele. Be Buté. </p>
-              </div>
-          
-          <div class="laptop_footer_flex">
-              <div class="footer_kollektion">
-                <a href="kollektion.html"> <img src="images/se-kollektion.png" alt="kollektion billede"> </a>
-              </div>
-          
-              <div class="laptop_footer_sko">
-                <div class="sko1"> <a href="condotti.html"> <img class="sko_style1_1" src="images/condotti-sort.png" alt="condotti sko"> </a></div>
-                <div class="sko1"> <a href="spiga.html"> <img class="sko_style2_1" src="images/spiga-sort.png" alt="spiga sko"></a> </div>
-                <div class="sko1"> <a href="macerata.html"> <img class="sko_style3_1" src="images/macerata-sort.png" alt="macerata sko"></a> </div>
-                <div class="sko1"> <a href="babila.html"> <img class="sko_style4_1" src="images/baliba-sort.png" alt="babila sko"> </a></div>
-              </div>
-          
+  <footer>
+  
+    <section class="footer">
+      <div class="footer_tekst">
+        <p> Hos Buté får du sko med tradition i Italiensk håndværk og materialer udført i et moderne design med
+          skandinaviske aner. Du behøver ikke længere at vælge mellem komfort og design. Få det hele. Be Buté. </p>
+      </div>
+  
+      <div class="laptop_footer_flex">
+        <div class="footer_kollektion">
+          <a href="kollektion.html"> <img src="images/se-kollektion.png" alt="kollektion billede"> </a>
+        </div>
+  
+        <div class="laptop_footer_sko">
+          <div class="sko1"> <a href="condotti.html"> <img class="sko_style1_1" src="images/condotti-sort.png"
+                alt="condotti sko"> </a></div>
+          <div class="sko1"> <a href="spiga.html"> <img class="sko_style2_1" src="images/spiga-sort.png"
+                alt="spiga sko"></a> </div>
+          <div class="sko1"> <a href="macerata.html"> <img class="sko_style3_1" src="images/macerata-sort.png"
+                alt="macerata sko"></a> </div>
+          <div class="sko1"> <a href="babila.html"> <img class="sko_style4_1" src="images/baliba-sort.png"
+                alt="babila sko"> </a></div>
+        </div>
+  
+      </div>
+  
+      <div class="monogram">
+        <img src="images/monogram.png" alt="monogram">
+      </div>
+  
+      <div class="laptop_kontakt_information">
+        <div class="kontakt_information">
+          <h1>KONTAKT</h1>
+          <h3><a href="kontakt.html">KONTAKTSIDE</a> <br> ADRESSE </h3>
+          <p>Fabriksvej 11B <br> 8260 Viby <br> DANMARK</p>
+          <h3>RETUNERINGER <br> FAQ </h3>
+          <div class="some_container">
+            <div class="ikon"> <a href="https://www.instagram.com/officialbute/?hl=da"> <img src="images/instagram.png"
+                  alt="instagram icon"> </div> </a>
+            <div class="ikon"> <a href="https://www.facebook.com/officialbute"> <img src="images/facebook.png"
+                  alt="facebook icon"> </div> </a>
+            <div class="ikon"> <a href="https://www.linkedin.com/company/but%C3%A9/about/"> <img src="images/linkedin.png"
+                  alt="linkedin icon"> </div> </a>
           </div>
-          
-              <div class="monogram">
-                <img src="images/monogram.png" alt="monogram">
-              </div>
-          
-            <div class="laptop_kontakt_information">
-              <div class="kontakt_information">
-                <h1>KONTAKT</h1>
-                <h3><a href="kontakt.html">KONTAKTSIDE</a> <br> ADRESSE </h3>
-                <p>Fabriksvej 11B <br> 8260 Viby <br> DANMARK</p>
-                <h3>RETUNERINGER <br> FAQ </h3>
-                <div class="some_container">
-                  <div class="ikon"> <a href="https://www.instagram.com/officialbute/?hl=da"> <img src="images/instagram.png" alt="instagram icon"> </div> </a>
-                  <div class="ikon"> <a href="https://www.facebook.com/officialbute"> <img src="images/facebook.png" alt="facebook icon"> </div> </a>
-                  <div class="ikon"> <a href="https://www.linkedin.com/company/but%C3%A9/about/"> <img src="images/linkedin.png" alt="linkedin icon"> </div> </a>
-               </div>
-              </div>
-          
-              
-          
-              <div class="laptop_kontakt_information_img"> <img src="images/footer-img.png" alt="billede af model med sko"> </div>
-            </div>
-          
-            </section>
-          </footer>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
-          <script src="js/burger.js"></script>
-          <script src="js/function.js"></script>
-    
+        </div>
+  
+  
+  
+        <div class="laptop_kontakt_information_img"> <img src="images/footer-img.png" alt="billede af model med sko">
+        </div>
+      </div>
+  
+    </section>
+  </footer>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+  <script src="js/burger.js"></script>
+  <script src="js/function.js"></script>
+
 </body>
 
 
